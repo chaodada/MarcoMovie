@@ -1031,24 +1031,10 @@ public final class MainActivity extends Activity {
             brandRow.setGravity(Gravity.CENTER_VERTICAL);
             ImageView brandMark = new ImageView(this);
             brandMark.setImageResource(R.drawable.logo_mark);
+            brandMark.setContentDescription("Marco Movie");
             LinearLayout.LayoutParams brandSize = new LinearLayout.LayoutParams(dp(30), dp(30));
-            brandSize.rightMargin = dp(10);
             brandRow.addView(brandMark, brandSize);
-            TextView brand = text("MARCO MOVIE", 14, WHITE);
-            brand.setIncludeFontPadding(false);
-            brand.setSingleLine(true);
-            brand.setLetterSpacing(.10f);
-            brand.setTypeface(null, Typeface.BOLD);
-            brandRow.addView(brand);
             if (homeDock.topMode) {
-                int dockLeftPx = Math.max(0, (windowWidth() - dp(homeDock.mainDp)) / 2);
-                int maxBrandWidth = dockLeftPx - dp(34 + 14);
-                if (maxBrandWidth < dp(90)) {
-                    brand.setVisibility(View.GONE);
-                } else {
-                    brand.setMaxWidth(Math.max(dp(50), maxBrandWidth - dp(40)));
-                    brand.setEllipsize(android.text.TextUtils.TruncateAt.END);
-                }
                 FrameLayout.LayoutParams brandLayout =
                         new FrameLayout.LayoutParams(
                                 ViewGroup.LayoutParams.WRAP_CONTENT,
